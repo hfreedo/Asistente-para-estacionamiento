@@ -25,7 +25,8 @@ el sistema mediante Bluetooth clásico con un módulo HC-06. El funcionamiento d
 seguridad permanece en el Arduino: una desconexión del teléfono no debe detener
 la medición ni las alertas locales.
 
-> [!WARNING]
+### Advertencia de seguridad
+
 > Este proyecto es un prototipo experimental y educativo. No es un sistema
 > automotriz certificado y no sustituye la observación ni el criterio del
 > conductor.
@@ -116,7 +117,8 @@ Arduino D8 ---- 1 kΩ ----+---- HC-06 RXD
                         GND
 ```
 
-> [!CAUTION]
+### Precaución eléctrica
+
 > No se deben conectar 6 V directamente a las tiras WS2812B. Para varias tiras,
 > la corriente no debe circular a través del Arduino ni de una protoboard.
 
@@ -215,9 +217,11 @@ SPP/RFCOMM para comunicarse con el HC-06.
 
 1. Abrir la carpeta `android-app` en Android Studio.
 2. Esperar la sincronización de Gradle.
-3. Ejecutar `Assemble 'app' Run Configuration` o `Ctrl + F9`.
+3. Ensamblar la configuración de la app mediante `Ctrl + F9`. En instalaciones
+   de Android Studio en inglés, la opción aparece como
+   `Assemble 'app' Run Configuration`.
 4. Conectar un teléfono con depuración USB o inalámbrica.
-5. Pulsar `Run`.
+5. Pulsar `Ejecutar ▶` (`Run` si Android Studio está en inglés).
 
 La APK de depuración se genera localmente en:
 
@@ -227,7 +231,7 @@ android-app/app/build/outputs/apk/debug/app-debug.apk
 
 Los archivos generados dentro de `build/` no deben incluirse en Git.
 
-## Estructura del repositorio
+## Estructura del proyecto
 
 ```text
 .
@@ -279,4 +283,3 @@ Las bibliotecas externas conservan sus propias licencias. Consulta
 ## Autor
 
 **hfreedo** — [github.com/hfreedo](https://github.com/hfreedo)
-
