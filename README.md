@@ -9,10 +9,6 @@
   alerta sonora, tiras LED direccionables y control desde Android.
 </p>
 
-<p align="center">
-  Desarrollado por <a href="https://github.com/hfreedo">@hfreedo</a>
-</p>
-
 ## Descripción
 
 ParkAssist es un prototipo electrónico que representa la distancia entre un
@@ -274,12 +270,7 @@ Los archivos generados dentro de `build/` no deben incluirse en Git.
 
 ## Licencia
 
-El código propio de ParkAssist se distribuye bajo la [Licencia MIT](LICENSE),
-copyright © 2026 hfreedo.
+ParkAssist se distribuye bajo la [Licencia MIT](LICENSE).
 
 Las bibliotecas externas conservan sus propias licencias. Consulta
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
-
-## Autor
-
-**hfreedo** — [github.com/hfreedo](https://github.com/hfreedo)
