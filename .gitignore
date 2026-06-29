@@ -1,0 +1,12 @@
+.agents/
+.codex/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arduino build
+build/
+*.elf
+*.hex

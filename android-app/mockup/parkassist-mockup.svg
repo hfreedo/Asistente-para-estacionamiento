@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="900" viewBox="0 0 430 900">
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#152b45"/><stop offset=".38" stop-color="#08111f"/></linearGradient>
+    <linearGradient id="card" x2="1" y2="1"><stop stop-color="#15243a"/><stop offset="1" stop-color="#101c2d"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#49ead7"/><stop offset="1" stop-color="#168b84"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .txt{font-family:Segoe UI,Arial,sans-serif;fill:#edf5ff}.muted{fill:#8fa3bd}.small{font-size:11px}.tiny{font-size:9px;letter-spacing:1px}.title{font-size:20px;font-weight:700}.section{font-size:14px;font-weight:700}.card{fill:url(#card);stroke:#263851}.chip{fill:#101b2b;stroke:#30435d}.chipon{fill:#193d3b;stroke:#28746e}.ledoff{fill:#27354a}.field{fill:#0b1625;stroke:#2a3d56}
+    </style>
+  </defs>
+  <rect width="430" height="900" rx="38" fill="url(#bg)"/>
+  <rect x="18" y="18" width="394" height="864" rx="32" fill="#08111f" stroke="#31435d"/>
+  <image x="38" y="40" width="46" height="46" href="parkassist-logo.png" preserveAspectRatio="xMidYMid slice"/>
+  <text x="92" y="60" class="txt title">ParkAssist</text><text x="92" y="77" class="txt muted small">Asistente Arduino</text>
+  <rect x="274" y="49" width="116" height="30" rx="11" fill="#15372f"/><text x="332" y="68" text-anchor="middle" class="txt small" fill="#62e9ad">● HC-06 conectado</text>
+
+  <rect x="38" y="103" width="352" height="201" rx="22" class="card"/>
+  <text x="55" y="129" class="txt muted tiny">DISTANCIA ACTUAL</text>
+  <text x="55" y="190" class="txt" font-family="Segoe UI,Arial" font-size="54" font-weight="700">68</text><text x="126" y="190" class="txt muted" font-size="18">cm</text>
+  <rect x="278" y="153" width="94" height="28" rx="10" fill="#403711"/><text x="325" y="171" text-anchor="middle" class="txt small" fill="#ffd249" font-weight="700">PRECAUCIÓN</text>
+  <g transform="translate(59,221)">
+    <circle cx="0" cy="0" r="7" class="ledoff"/><circle cx="21" cy="0" r="7" class="ledoff"/><circle cx="42" cy="0" r="7" class="ledoff"/>
+    <g fill="#ffd249" filter="url(#glow)"><circle cx="63" cy="0" r="7"/><circle cx="84" cy="0" r="7"/><circle cx="105" cy="0" r="7"/><circle cx="126" cy="0" r="7"/><circle cx="147" cy="0" r="7"/><circle cx="168" cy="0" r="7"/><circle cx="189" cy="0" r="7"/><circle cx="210" cy="0" r="7"/><circle cx="231" cy="0" r="7"/></g>
+    <circle cx="252" cy="0" r="7" class="ledoff"/><circle cx="273" cy="0" r="7" class="ledoff"/><circle cx="294" cy="0" r="7" class="ledoff"/>
+  </g>
+  <text x="55" y="255" class="txt muted tiny">PELIGRO</text><text x="215" y="255" text-anchor="middle" class="txt muted tiny">PRECAUCIÓN</text><text x="372" y="255" text-anchor="end" class="txt muted tiny">SEGURO</text>
+  <circle cx="58" cy="281" r="4" fill="#3ee57b"/><text x="68" y="285" class="txt muted small">Seguro</text><circle cx="137" cy="281" r="4" fill="#ffd249"/><text x="147" y="285" class="txt muted small">Precaución</text><circle cx="244" cy="281" r="4" fill="#ff4d5e"/><text x="254" y="285" class="txt muted small">Detenerse</text>
+
+  <rect x="38" y="318" width="352" height="112" rx="22" class="card"/><text x="55" y="345" class="txt section">Estilo visual</text><text x="372" y="345" text-anchor="end" class="txt small" fill="#38d4c5">GUIADO</text>
+  <g transform="translate(55,363)"><rect width="61" height="34" rx="10" class="chip"/><text x="30" y="22" text-anchor="middle" class="txt small">Simple</text><rect x="68" width="65" height="34" rx="10" class="chipon"/><text x="100" y="22" text-anchor="middle" class="txt small" fill="#5ce3d3">Guiado</text><rect x="140" width="78" height="34" rx="10" class="chip"/><text x="179" y="22" text-anchor="middle" class="txt small">Dinámico</text><rect x="225" width="58" height="34" rx="10" class="chip"/><text x="254" y="22" text-anchor="middle" class="txt small">Flujo</text></g>
+
+  <rect x="38" y="444" width="352" height="224" rx="22" class="card"/><text x="55" y="472" class="txt section">Zona de estacionamiento</text><text x="372" y="472" text-anchor="end" class="txt small" fill="#38d4c5">EDITABLE</text>
+  <rect x="55" y="491" width="151" height="64" rx="14" class="field"/><text x="68" y="511" class="txt muted tiny">RANGO MÁXIMO</text><text x="68" y="540" class="txt" font-size="19" font-weight="700">120 cm</text>
+  <rect x="218" y="491" width="154" height="64" rx="14" class="field"/><text x="231" y="511" class="txt muted tiny">DETENERSE EN</text><text x="231" y="540" class="txt" font-size="19" font-weight="700">15 cm</text>
+  <text x="55" y="584" class="txt muted small">Brillo</text><text x="372" y="584" text-anchor="end" class="txt small" fill="#38d4c5">16 / 25</text><rect x="55" y="596" width="317" height="4" rx="2" fill="#2a3d56"/><rect x="55" y="596" width="200" height="4" rx="2" fill="#38d4c5"/><circle cx="255" cy="598" r="8" fill="#38d4c5"/>
+  <text x="55" y="629" class="txt muted small">Velocidad de animación</text><text x="372" y="629" text-anchor="end" class="txt small" fill="#38d4c5">5 / 10</text><rect x="55" y="641" width="317" height="4" rx="2" fill="#2a3d56"/><rect x="55" y="641" width="158" height="4" rx="2" fill="#38d4c5"/><circle cx="213" cy="643" r="8" fill="#38d4c5"/>
+
+  <rect x="38" y="682" width="352" height="166" rx="22" class="card"/><text x="55" y="710" class="txt section">Prueba sin sensor</text><text x="372" y="710" text-anchor="end" class="txt small" fill="#38d4c5">MODO SIMULADO</text>
+  <text x="55" y="742" class="txt muted small">Simular distancia</text><text x="372" y="742" text-anchor="end" class="txt small" fill="#38d4c5">68 cm</text><rect x="55" y="755" width="317" height="4" rx="2" fill="#2a3d56"/><rect x="55" y="755" width="145" height="4" rx="2" fill="#38d4c5"/><circle cx="200" cy="757" r="8" fill="#38d4c5"/>
+  <rect x="55" y="783" width="150" height="43" rx="13" fill="#1c2a3e" stroke="#31445e"/><text x="130" y="809" text-anchor="middle" class="txt small" font-weight="700">▶ Ejecutar demo</text><rect x="216" y="783" width="156" height="43" rx="13" fill="url(#accent)"/><text x="294" y="809" text-anchor="middle" class="txt small" fill="#062421" font-weight="800">Guardar ajustes</text>
+  <text x="215" y="861" text-anchor="middle" class="txt muted tiny">El Arduino mantiene la seguridad aunque el teléfono se desconecte.</text>
+  <text x="215" y="877" text-anchor="middle" class="txt small" fill="#38d4c5">Diseñado y desarrollado por @hfreedo</text>
+</svg>

@@ -5,9 +5,19 @@
 <h1 align="center">ParkAssist</h1>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/uso-educativo%20y%20demostrativo-0a9396" alt="Uso educativo">
+  <img src="https://img.shields.io/badge/plataforma-Windows-2563eb" alt="Plataforma">
+  <img src="https://img.shields.io/badge/hardware-Arduino%20UNO-00979d" alt="Arduino UNO">
+  <img src="https://img.shields.io/badge/app-Android-3ddc84" alt="Android">
+  <img src="https://img.shields.io/github/v/release/hfreedo/Asistente-para-estacionamiento?label=versi%C3%B3n&color=51e898" alt="Release">
+</p>
+
+<p align="center">
   Prototipo de asistencia al estacionamiento con Arduino UNO, sensor ultrasónico,
   alerta sonora, tiras LED direccionables y control desde Android.
 </p>
+
+![Mockup de ParkAssist](docs/parkassist-mockup.png)
 
 ## Descripción
 
@@ -47,10 +57,12 @@ la medición ni las alertas locales.
 - Cinco perfiles visuales: Simple, Guiado, Dinámico, Flujo y Respiración.
 - Buzzer intermitente en peligro y rápido en estado crítico.
 - Detección visual de error del sensor.
-- Modo simulado y demostración automática.
+- Modos exclusivos Sensor, Manual y Demo para impedir estados contradictorios.
 - Configuración mediante consola USB o Bluetooth.
 - Persistencia manual de parámetros en EEPROM.
 - Aplicación Android nativa escrita en Kotlin.
+- Navegación principal separada en Monitor, Calibración y Ajustes.
+- Menú lateral para dispositivo, diagnóstico, ayuda e información del proyecto.
 
 ## Comportamiento visual predeterminado
 
@@ -94,9 +106,9 @@ rango máximo y el mínimo.
 | WS2812B `DIN` | Arduino D6 mediante resistencia |
 | WS2812B `5V` | Fuente externa regulada de 5 V |
 | WS2812B `GND` | GND de fuente y Arduino |
-| Buzzer pasivo | D3 y GND |
-| HC-06 `TXD` | Arduino D7 |
-| HC-06 `RXD` | Arduino D8 mediante divisor a 3,3 V |
+| Buzzer pasivo | D5 y GND |
+| HC-06 `TXD` | Arduino D11 (`PIN_BT_RX`) |
+| HC-06 `RXD` | Arduino D12 (`PIN_BT_TX`) mediante divisor a 3,3 V |
 | HC-SR04 `TRIG` | Arduino D9 |
 | HC-SR04 `ECHO` | Arduino D10 |
 | HC-SR04 `VCC/GND` | 5 V y GND |
@@ -104,7 +116,7 @@ rango máximo y el mínimo.
 Divisor sugerido para proteger el RXD del HC-06:
 
 ```text
-Arduino D8 ---- 1 kΩ ----+---- HC-06 RXD
+Arduino D12 --- 1 kΩ ----+---- HC-06 RXD
                          |
                         1 kΩ
                          |
@@ -144,7 +156,7 @@ líneas de texto ASCII.
 ## Prueba sin sensor ultrasónico
 
 ```text
-MODO SIMULADO
+MODO MANUAL
 PERFIL GUIADO
 DISTANCIA 130
 DISTANCIA 100
@@ -156,14 +168,12 @@ DISTANCIA 10
 Demostración automática:
 
 ```text
-DEMO ON
-MONITOR ON
+MODO DEMO
 ```
 
 Para regresar al HC-SR04:
 
 ```text
-DEMO OFF
 MODO SENSOR
 ```
 
@@ -171,10 +181,9 @@ MODO SENSOR
 
 ```text
 MODO SENSOR
-MODO SIMULADO
+MODO MANUAL
+MODO DEMO
 DISTANCIA 68
-DEMO ON
-DEMO OFF
 RANGO 120 15
 PERFIL SIMPLE
 PERFIL GUIADO
@@ -187,6 +196,7 @@ SONIDO ON
 SISTEMA ON
 MONITOR ON
 ESTADO
+CONFIG
 GUARDAR
 FABRICA
 AYUDA
@@ -195,10 +205,20 @@ AYUDA
 `GUARDAR` escribe las preferencias en EEPROM. Sin este comando, los cambios se
 aplican durante la sesión pero pueden perderse al reiniciar.
 
+La aplicación no utiliza telemetría Bluetooth espontánea. Envía solicitudes
+numeradas (`@<id> COMANDO`) de una en una y espera una respuesta `RSP` antes de
+continuar. `MONITOR ON` queda reservado para diagnóstico por USB, evitando que
+`SoftwareSerial` transmita mientras llega una orden del teléfono.
+
 ## Aplicación Android
 
 La app se encuentra en [`android-app`](android-app) y utiliza Bluetooth clásico
 SPP/RFCOMM para comunicarse con el HC-06.
+
+La conexión permanece fuera del ciclo de vida de la pantalla, por lo que un
+cambio de orientación no la cierra. Ante una pérdida inesperada, la app intenta
+reconectar al último dispositivo con esperas progresivas. El interruptor
+`Sistema activo` pausa luces, buzzer y modos de prueba sin cortar el Bluetooth.
 
 ### Requisitos
 
@@ -234,6 +254,7 @@ Los archivos generados dentro de `build/` no deben incluirse en Git.
 ├── asistente_estacionamiento/   Firmware principal
 ├── test_tiras_ws2812b/          Pruebas de colores y animaciones
 ├── android-app/                 Aplicación Android y mockup
+├── docs/                        Capturas y documentación
 ├── LICENSE                      Licencia MIT del proyecto
 └── THIRD_PARTY_NOTICES.md       Dependencias y licencias externas
 ```
@@ -242,21 +263,16 @@ Los archivos generados dentro de `build/` no deben incluirse en Git.
 
 - El HC-SR04 puede producir errores con superficies inclinadas, humedad,
   vibraciones o materiales que reflejen mal el ultrasonido.
-- La aplicación Android todavía se encuentra en revisión de navegación,
-  permisos, accesibilidad y sincronización de rangos.
-- La representación de distancia debe verificarse contra la configuración real
-  del firmware antes de una publicación estable.
+- La aplicación Android todavía requiere pruebas de accesibilidad y validación
+  visual en diferentes tamaños de pantalla.
 - El HC-06 utiliza un PIN básico y no proporciona seguridad moderna.
 - El montaje todavía requiere calibración física en el lugar de instalación.
 
 ## Próximas mejoras
 
 - Asistente de calibración guiada.
-- Sincronización completa de rangos entre Arduino y Android.
-- Reconexión automática al último HC-06.
-- Pantallas independientes de monitor, calibración y ajustes.
 - Diagnóstico de sensor, Bluetooth y firmware.
-- Corrección de hallazgos de Android Lint y mejora de accesibilidad.
+- Migración de textos a recursos traducibles y mejora de accesibilidad.
 - Pruebas físicas documentadas con diferentes superficies y distancias.
 
 ## Seguridad
