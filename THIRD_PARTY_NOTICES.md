@@ -1,8 +1,9 @@
 # Dependencias de terceros
 
 ParkAssist utiliza componentes de software desarrollados por terceros. La
-Licencia MIT ubicada en `LICENSE` cubre el código propio del proyecto y no
-reemplaza las licencias de estas dependencias.
+licencia de uso educativo y demostrativo no comercial ubicada en `LICENSE`
+cubre el codigo propio del proyecto y no reemplaza las licencias de estas
+dependencias.
 
 ## Adafruit NeoPixel
 

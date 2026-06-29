@@ -299,7 +299,7 @@ Los archivos generados dentro de `build/` no deben incluirse en Git.
 
 ## Licencia
 
-ParkAssist se distribuye bajo la [Licencia MIT](LICENSE).
+ParkAssist se distribuye bajo una [licencia de uso educativo y demostrativo no comercial](LICENSE). No se permite su uso con fines comerciales.
 
 Las bibliotecas externas conservan sus propias licencias. Consulta
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
