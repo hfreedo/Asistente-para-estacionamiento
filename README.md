@@ -17,7 +17,9 @@
   alerta sonora, tiras LED direccionables y control desde Android.
 </p>
 
-![Mockup de ParkAssist](docs/parkassist-mockup.png)
+<p align="center">
+  <img src="docs/parkassist-mockup.png" alt="Mockup de ParkAssist" width="320">
+</p>
 
 ## Descripción
 
