@@ -210,6 +210,17 @@ numeradas (`@<id> COMANDO`) de una en una y espera una respuesta `RSP` antes de
 continuar. `MONITOR ON` queda reservado para diagnóstico por USB, evitando que
 `SoftwareSerial` transmita mientras llega una orden del teléfono.
 
+## Descarga
+
+La APK firmada de la última versión se encuentra en
+[GitHub Releases](https://github.com/hfreedo/Asistente-para-estacionamiento/releases/latest).
+
+Para instalarla en un teléfono Android:
+
+1. Descargar `ParkAssist-v1.0.apk` desde la sección de assets del release.
+2. Permitir instalación de orígenes desconocidos en Ajustes > Seguridad.
+3. Abrir el archivo y confirmar la instalación.
+
 ## Aplicación Android
 
 La app se encuentra en [`android-app`](android-app) y utiliza Bluetooth clásico
