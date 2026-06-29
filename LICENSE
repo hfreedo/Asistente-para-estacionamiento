@@ -2,14 +2,14 @@
 
 Copyright (c) 2026 hfreedo
 
-El proyecto **ParkAssist**, incluyendo su código fuente, firmware Arduino, aplicacion Android, documentacion, recursos visuales, mockups y materiales asociados, se distribuye con fines educativos, demostrativos y de aprendizaje.
+El proyecto **ParkAssist**, incluyendo su código fuente, firmware Arduino, aplicación Android, documentación, recursos visuales, mockups y materiales asociados, se distribuye con fines educativos, demostrativos y de aprendizaje.
 
 ## 1. Usos permitidos
 
-Se permite usar, copiar, estudiar, modificar y compartir el proyecto cuando el uso tenga fines educativos, escolares, academicos, demostrativos, de feria cientifica o de aprendizaje personal, siempre que:
+Se permite usar, copiar, estudiar, modificar y compartir el proyecto cuando el uso tenga fines educativos, escolares, académicos, demostrativos, de feria científica o de aprendizaje personal, siempre que:
 
 - No exista finalidad comercial directa ni indirecta.
-- Se mantenga el aviso de autoria original.
+- Se mantenga el aviso de autoría original.
 - Se conserve una copia de esta licencia junto con el proyecto o sus derivados.
 - No se presente el prototipo como un sistema automotriz certificado, industrial o profesional.
 
@@ -19,18 +19,18 @@ Esta licencia no autoriza:
 
 - Vender, alquilar, sublicenciar o comercializar el proyecto, total o parcialmente.
 - Utilizarlo en cursos, talleres, capacitaciones, clases, plataformas, servicios o materiales por los que se cobre dinero.
-- Integrarlo en productos, servicios, consultorias, contenidos comerciales o demostraciones promocionales.
-- Utilizar el nombre, imagen, documentacion, ejecutable o interfaz para obtener beneficio economico.
-- Eliminar o alterar los avisos de autoria, licencia o atribucion.
+- Integrarlo en productos, servicios, consultorías, contenidos comerciales o demostraciones promocionales.
+- Utilizar el nombre, imagen, documentación, ejecutable o interfaz para obtener beneficio económico.
+- Eliminar o alterar los avisos de autoría, licencia o atribución.
 
 ## 3. Obras derivadas
 
-Las modificaciones, adaptaciones y versiones derivadas solamente pueden compartirse bajo condiciones compatibles con esta licencia, manteniendo la restriccion de uso no comercial y el reconocimiento de autoria correspondiente.
+Las modificaciones, adaptaciones y versiones derivadas solamente pueden compartirse bajo condiciones compatibles con esta licencia, manteniendo la restricción de uso no comercial y el reconocimiento de autoría correspondiente.
 
-## 4. Sin garantia
+## 4. Sin garantía
 
-El proyecto se entrega **tal cual**, sin garantia expresa o implicita. Sus autores o titulares no seran responsables por danos, perdidas, fallas, interrupciones, usos indebidos o consecuencias derivadas de su utilizacion.
+El proyecto se entrega **tal cual**, sin garantía expresa o implícita. Sus autores o titulares no serán responsables por daños, pérdidas, fallas, interrupciones, usos indebidos o consecuencias derivadas de su utilización.
 
 ## 5. Alcance y advertencia de seguridad
 
-ParkAssist es un prototipo educativo basado en Arduino UNO, sensor HC-SR04, tiras LED WS2812B y un modulo Bluetooth HC-06. No es un sistema automotriz certificado y no sustituye la observacion ni el criterio del conductor. No debe emplearse como unica referencia para evitar colisiones.
+ParkAssist es un prototipo educativo basado en Arduino UNO, sensor HC-SR04, tiras LED WS2812B y un módulo Bluetooth HC-06. No es un sistema automotriz certificado y no sustituye la observación ni el criterio del conductor. No debe emplearse como única referencia para evitar colisiones.
